@@ -43,7 +43,7 @@ let package = Package(
     localOrRemote(
       name: "common-shell",
       path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-shell",
-      remote: { .package(url: "https://github.com/wrkstrm/common-shell.git", from: "0.1.0") }),
+      remote: { .package(url: "https://github.com/swift-universal/common-shell.git", from: "0.1.0") }),
     localOrRemote(
       name: "wrkstrm-main",
       path: "../../../../../../../wrkstrm/spm/universal/domain/system/wrkstrm-main",
