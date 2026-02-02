@@ -3,9 +3,9 @@ import Foundation
 import PackageDescription
 
 let useLocalDeps: Bool = {
-  guard let raw = ProcessInfo.processInfo.environment["SPM_USE_LOCAL_DEPS"] else { return false }
+  guard let raw = ProcessInfo.processInfo.environment["SPM_USE_LOCAL_DEPS"] else { return true }
   let v = raw.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-  return v == "1" || v == "true" || v == "yes"
+  return !(v == "0" || v == "false" || v == "no")
 }()
 
 func localOrRemote(
@@ -43,7 +43,7 @@ let package = Package(
     localOrRemote(
       name: "common-shell",
       path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-shell",
-      remote: { .package(url: "https://github.com/swift-universal/common-shell.git", from: "0.1.0") }),
+      remote: { .package(url: "https://github.com/swift-universal/common-shell.git", from: "0.0.1") }),
     localOrRemote(
       name: "wrkstrm-main",
       path: "../../../../../../../wrkstrm/spm/universal/domain/system/wrkstrm-main",
