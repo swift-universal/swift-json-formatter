@@ -26,7 +26,7 @@ let package = Package(
   ],
   dependencies: [
     .package(
-      path: "../../../../../../../wrkstrm/spm/universal/domain/tooling/swift-formatting-core"
+      path: "../../../../../../../swift-universal/public/spm/universal/domain/tooling/swift-formatting-core"
     ),
     localOrRemote(
       name: "wrkstrm-foundation",
