@@ -1,4 +1,4 @@
-// swift-tools-version: 6.2
+// swift-tools-version:6.2
 import Foundation
 import PackageDescription
 
@@ -34,7 +34,7 @@ let package = Package(
       remote: { .package(url: "https://github.com/wrkstrm/wrkstrm-foundation.git", from: "3.0.0") }),
     localOrRemote(
       name: "common-log",
-      path: "../../../../../../swift-universal/public/spm/universal/domain/system/common-log",
+      path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-log",
       remote: { .package(url: "https://github.com/swift-universal/common-log.git", from: "3.0.0") }),
     localOrRemote(
       name: "wrkstrm-main",
