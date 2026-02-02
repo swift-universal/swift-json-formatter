@@ -37,6 +37,14 @@ let package = Package(
       path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-log",
       remote: { .package(url: "https://github.com/swift-universal/common-log.git", from: "3.0.0") }),
     localOrRemote(
+      name: "common-cli",
+      path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-cli",
+      remote: { .package(url: "https://github.com/swift-universal/common-cli.git", from: "0.1.0") }),
+    localOrRemote(
+      name: "common-shell",
+      path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-shell",
+      remote: { .package(url: "https://github.com/wrkstrm/common-shell.git", from: "0.1.0") }),
+    localOrRemote(
       name: "wrkstrm-main",
       path: "../../../../../../../wrkstrm/spm/universal/domain/system/wrkstrm-main",
       remote: { .package(url: "https://github.com/wrkstrm/wrkstrm-main.git", from: "3.0.0") }),
@@ -59,6 +67,8 @@ let package = Package(
         .product(name: "SwiftFormattingCore", package: "swift-formatting-core"),
         .product(name: "SwiftFormattingCoreCLI", package: "swift-formatting-core"),
         .product(name: "CommonLog", package: "common-log"),
+        .product(name: "CommonCLI", package: "common-cli"),
+        .product(name: "CommonShell", package: "common-shell"),
         .product(name: "ArgumentParser", package: "swift-argument-parser"),
       ],
       path: "sources/swift-json-formatter-cli"

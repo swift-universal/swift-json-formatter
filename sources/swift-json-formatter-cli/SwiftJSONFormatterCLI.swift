@@ -1,9 +1,11 @@
 import ArgumentParser
+import CommonCLI
+import CommonLog
+import CommonShell
 import Foundation
 import SwiftFormattingCore
 import SwiftFormattingCoreCLI
 import SwiftJSONFormatter
-import CommonLog
 
 @main
 struct SwiftJSONFormatterCLI: AsyncParsableCommand {
@@ -129,6 +131,6 @@ struct SwiftJSONFormatterCLI: AsyncParsableCommand {
   }
 
   private static func logInfo(_ message: String) {
-    formatterLog.info(.message(message))
+    formatterLog.info(message)
   }
 }
