@@ -3,9 +3,9 @@ import Foundation
 import PackageDescription
 
 let useLocalDeps: Bool = {
-  guard let raw = ProcessInfo.processInfo.environment["SPM_USE_LOCAL_DEPS"] else { return true }
+  guard let raw = ProcessInfo.processInfo.environment["SPM_USE_LOCAL_DEPS"] else { return false }
   let v = raw.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-  return !(v == "0" || v == "false" || v == "no")
+  return v == "1" || v == "true" || v == "yes" || v == "on"
 }()
 
 func localOrRemote(
@@ -28,7 +28,7 @@ let package = Package(
     .package(url: "https://github.com/swift-universal/swift-formatting-core.git", from: "0.0.1"),
     localOrRemote(
       name: "wrkstrm-foundation",
-      path: "../../../../../../../wrkstrm/spm/universal/domain/system/wrkstrm-foundation",
+      path: "../../../../../../../wrkstrm/public/spm/universal/domain/system/wrkstrm-foundation",
       remote: { .package(url: "https://github.com/wrkstrm/wrkstrm-foundation.git", from: "3.0.0") }),
     localOrRemote(
       name: "common-log",
@@ -36,15 +36,15 @@ let package = Package(
       remote: { .package(url: "https://github.com/swift-universal/common-log.git", from: "3.0.0") }),
     localOrRemote(
       name: "swift-common-cli",
-      path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-cli",
-      remote: { .package(url: "https://github.com/swift-universal/swift-common-cli.git", from: "0.1.0") }),
+      path: "../../../../../../../swift-universal/public/spm/universal/domain/system/swift-common-cli",
+      remote: { .package(url: "https://github.com/swift-universal/swift-common-cli.git", from: "0.1.1") }),
     localOrRemote(
       name: "common-shell",
       path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-shell",
-      remote: { .package(url: "https://github.com/swift-universal/common-shell.git", from: "0.0.1") }),
+      remote: { .package(url: "https://github.com/swift-universal/common-shell.git", from: "0.1.2") }),
     localOrRemote(
       name: "wrkstrm-main",
-      path: "../../../../../../../wrkstrm/spm/universal/domain/system/wrkstrm-main",
+      path: "../../../../../../../wrkstrm/public/spm/universal/domain/system/wrkstrm-main",
       remote: { .package(url: "https://github.com/wrkstrm/wrkstrm-main.git", from: "3.0.0") }),
     .package(url: "https://github.com/apple/swift-argument-parser", from: "1.6.0"),
   ],
