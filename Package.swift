@@ -25,9 +25,7 @@ let package = Package(
     .executable(name: "swift-json-formatter", targets: ["SwiftJSONFormatterCLI"]),
   ],
   dependencies: [
-    .package(
-      path: "../../../../../../../swift-universal/public/spm/universal/domain/tooling/swift-formatting-core"
-    ),
+    .package(url: "https://github.com/swift-universal/swift-formatting-core.git", from: "0.0.1"),
     localOrRemote(
       name: "wrkstrm-foundation",
       path: "../../../../../../../wrkstrm/spm/universal/domain/system/wrkstrm-foundation",
@@ -39,7 +37,7 @@ let package = Package(
     localOrRemote(
       name: "common-cli",
       path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-cli",
-      remote: { .package(url: "https://github.com/swift-universal/common-cli.git", from: "0.1.0") }),
+      remote: { .package(url: "https://github.com/swift-universal/swift-common-cli.git", from: "0.1.0") }),
     localOrRemote(
       name: "common-shell",
       path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-shell",
