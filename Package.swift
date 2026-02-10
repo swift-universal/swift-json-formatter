@@ -35,7 +35,7 @@ let package = Package(
       path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-log",
       remote: { .package(url: "https://github.com/swift-universal/common-log.git", from: "3.0.0") }),
     localOrRemote(
-      name: "common-cli",
+      name: "swift-common-cli",
       path: "../../../../../../../swift-universal/public/spm/universal/domain/system/common-cli",
       remote: { .package(url: "https://github.com/swift-universal/swift-common-cli.git", from: "0.1.0") }),
     localOrRemote(
@@ -65,7 +65,7 @@ let package = Package(
         .product(name: "SwiftFormattingCore", package: "swift-formatting-core"),
         .product(name: "SwiftFormattingCoreCLI", package: "swift-formatting-core"),
         .product(name: "CommonLog", package: "common-log"),
-        .product(name: "CommonCLI", package: "common-cli"),
+        .product(name: "CommonCLI", package: "swift-common-cli"),
         .product(name: "CommonShell", package: "common-shell"),
         .product(name: "ArgumentParser", package: "swift-argument-parser"),
       ],
